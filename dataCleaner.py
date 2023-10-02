@@ -20,21 +20,27 @@ relationships = pd.read_csv("relationships.csv")
 # print(addresses.head())
 print(addresses.columns)
 print(len(addresses.columns))
+addre_col = len(addresses.columns)
 #print(entities.head())
 print(entities.columns)
 print(len(entities.columns))
+entities_col = len(entities.columns)
 #print(intermediaries.head())
 print(intermediaries.columns)
 print(len(intermediaries.columns))
+interm_col = len(intermediaries.columns)
 #print(officers.head())
 print(officers.columns)
 print(len(officers.columns))
+officers_col = len(officers.columns)
 #print(others.head())
 print(others.columns)
 print(len(others.columns))
+others_col = len(others.columns)
 #print(relationships.head())
 print(relationships.columns)
 print(len(relationships.columns))
+relation_col = len(relationships.columns)
 
 """
 think about what you need to do?
@@ -136,10 +142,11 @@ clean_officers = officers.dropna()
 clean_others = others.dropna()
 ###data cleaned outside of relationships###
 print("\nCHECKING RELATIONSHIPS\n")
+"""
 for x in range(len(relationships)):
     print(x, " out of ", len(relationships))
-
-
+"""
+clean_relationships = relationships
 
 
 
@@ -154,10 +161,28 @@ print("\n\ncleaning done\n\n")
 
 print("begin printing new .csv\n")
 clean_addresses.to_csv("reduced-addresses.csv", mode = 'w', index = False)
-clean_entities.to_csv("reduced-entities.csv")
+entities.to_csv("reduced-entities.csv")
 clean_intermediaries.to_csv("reduced-intermediaries.csv", mode = 'w', index = False)
 clean_officers.to_csv("reduced-officers.csv", mode = 'w', index = False)
-clean_others.to_csv("reduced-others.csv", mode = 'w', index = False)
+others.to_csv("reduced-others.csv", mode = 'w', index = False)
 relationships.to_csv("reduced-relationships.csv", mode = 'w', index = False)
 
 print("\n\ndone\n\n")
+print("addresses row: ", len(addresses), " -> ", len(clean_addresses))
+print("addresses column: ", addre_col, " -> ", len(clean_addresses.columns))
+
+print("entities row: ", len(entities), " -> ", len(entities))
+print("entities column: ", entities_col, " -> ", len(clean_entities.columns))
+
+print("intermediaries row: ", len(intermediaries), " -> ", len(clean_intermediaries))
+print("intermediaries column: ", interm_col, " -> ", len(clean_intermediaries.columns))
+
+print("officers row: ", len(officers), " -> ", len(clean_officers))
+print("officers column: ", officers_col, " -> ", len(clean_officers.columns))
+
+print("others row: ", len(others), " -> ", len(others))
+print("others column: ", others_col, " -> ", len(clean_others.columns))
+
+print("relationships row: ", len(relationships), " -> ", len(clean_relationships))
+print("relationships column: ", relation_col, " -> ", len(clean_relationships.columns))
+
