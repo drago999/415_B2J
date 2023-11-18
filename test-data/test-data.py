@@ -15,6 +15,9 @@ def getTestData():
     addresses_file = "addresses.csv"
     relationships_file = "relationships.csv"
     officers_file = "officers.csv"
+    intermediaries_file = "intermediaries.csv"
+    entities_file = "entities.csv"  # Updated to "entities.csv"
+
 
     address_df = pd.read_csv(input_folder + addresses_file).head(10)
     address_df.to_csv(output_folder + "test-addresses.csv", index=False)
@@ -32,6 +35,11 @@ def getTestData():
     filtered_officers_df = officers_df[officers_df['node_id'].isin(node_id_start_list)]
     filtered_officers_df.to_csv(output_folder + "test-officers.csv", index=False)
 
+    # Read entities data (formerly intermediaries)
+    entities_df = pd.read_csv(input_folder + entities_file).head(10)  # Read first 10 entries
+    if "Unnamed: 0" in entities_df.columns:
+        entities_df = entities_df.drop(columns=["Unnamed: 0"])  # Remove "Unnamed: 0" column
+    entities_df.to_csv(output_folder + "test-entities.csv", index=False)  # Export entities data
     print("Data extraction and export completed.")
 
 def main():
