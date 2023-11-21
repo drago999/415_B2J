@@ -1,0 +1,13 @@
+node_id_start,node_id_end,rel_type,link,status,start_date,end_date
+80046254,81014050,registered_address,mailing address; residential address,,,
+80046258,81014052,registered_address,mailing address; residential address,,,
+80046266,81014055,registered_address,residential address; mailing address,,,
+80046267,81014056,registered_address,residential address; mailing address,,,
+80046269,81014057,registered_address,residential address; mailing address,,,
+80046270,81014058,registered_address,residential address; mailing address,,,
+80046294,81014060,registered_address,residential address,,,
+80046322,81014062,registered_address,business address; registered office,,,
+82023121,81014062,registered_address,registered office,,,
+82023193,81014062,registered_address,business address; mailing address; registered office,,,
+80094734,81014067,registered_address,residential address,,,
+80046381,81014068,registered_address,residential address,,,
