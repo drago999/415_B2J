@@ -21,6 +21,8 @@ from pyspark.sql import SparkSession
 
 #creates a session/database that your data will be stored in
 spark = SparkSession.builder.appName('testSession').getOrCreate()
+#warning THIS ^^^^ is slow
+
 
 #spark
 """
